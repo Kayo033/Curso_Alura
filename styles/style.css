@@ -10,26 +10,56 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
 
+/* DECLARAÇÃO DE VARIAVEIS (:ROOT) NO CSS ABAIXO ESCOPO GLOBAL (USA NO CSS TODO !) */
+
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #F6F6F6;
+    --cor-terciaria: #22D4FD;
+    --cor-hover: #dbcd0f;
+
+    --fonte-primaria: 'Montserrat', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
+    /* 
+        O 'PADDING' é responsável por definir a distância entre um conteúdo e suas bordas.
+    */
 
 }
 
 body {
-    height: 100vh;
     /*Usa 100% da VIEWPORT*/
+    /*  height: 100vh; 
+        Por agora ter bastante conteúdo e a página estar passando o tamanho e começando a quebrar, tira o 100vh pq esta passando o tamanho da tela com o conteúdo
+    */
     box-sizing: border-box;
-    background-color: #000000;
-    color: #F6F6F6;
+    background-color: var(--cor-primaria); /*Usando variaveis no css VAR(NOME DA VARIAVEL)*/
+    color: var(--cor-secundaria);
 }
 
-.titulo-destaque {
-    color: #22D4FD;
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-primaria);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
 }
 
 .apresentacao {
-    margin: 10% 15%;
+    padding: 5% 15%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -43,10 +73,15 @@ body {
     height: 482px;
 }
 
+
 .apresentacao__conteudo__titulo {
     font-size: 30px;
     font-family: 'Oswald', sans-serif;
     text-shadow: 4px 4px 4px #db0f0f;
+}
+
+.titulo-destaque {
+    color: var(--cor-terciaria);
 }
 
 .apresentacao__conteudo__texto {
@@ -72,25 +107,35 @@ body {
     display: flex;
     justify-content: center;
     gap: 16px;
-    border: 2px solid #22D4FD;
+    border: 2px solid var(--cor-terciaria);
     width: 378px;
     text-align: center;
     border-radius: 8px;
     font-size: 24px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--fonte-primaria);
     font-weight: 600px; /*Por ser botão, usa FONT-WEIGHT para aumentar o destaque das palavras*/
     padding: 21.5px 0;
     text-decoration: none;
-    color: #F6F6F6;
-    font-family: 'Montserrat', sans-serif;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-primaria);
 }
 
 /*HOVER: quando passar o mouse acontece alguma coisa. EXEMPLOS ABAIXO...*/
 .apresentacao__links__link:hover { 
     background-color: #272727;
-    color: #dbcd0f;
+    color: var(--cor-hover);
 }
 
 .apresentacao__links_subtitulo:hover {
-    color: #dbcd0f;
+    color: var(--cor-hover);
+}
+
+.rodape {
+    padding: 24px;
+    background-color: #22D4FD;
+    color: var(--cor-primaria);
+    text-align: center;
+    font-family: var(--fonte-primaria);
+    font-size: 24px;
+    font-weight: 400;
 }
