@@ -10,7 +10,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
 
-/* DECLARAÇÃO DE VARIAVEIS (:ROOT) NO CSS ABAIXO ESCOPO GLOBAL (USA NO CSS TODO !) */
+    /* DECLARAÇÃO DE VARIAVEIS (:ROOT) NO CSS ABAIXO ESCOPO GLOBAL (USA NO CSS TODO !) */
 
 :root {
     --cor-primaria: #0F0E0E;
@@ -24,17 +24,17 @@
 * {
     margin: 0;
     padding: 0;
-    /* 
-        O 'PADDING' é responsável por definir a distância entre um conteúdo e suas bordas.
-    */
+        /* 
+            O 'PADDING' é responsável por definir a distância entre um conteúdo e suas bordas.
+        */
 
 }
 
 body {
-    /*Usa 100% da VIEWPORT*/
-    /*  height: 100vh; 
-        Por agora ter bastante conteúdo e a página estar passando o tamanho e começando a quebrar, tira o 100vh pq esta passando o tamanho da tela com o conteúdo
-    */
+        /*Usa 100% da VIEWPORT*/
+     height: 100vh; 
+        /* Por agora ter bastante conteúdo e a página estar passando o tamanho e começando a quebrar, tira o 100vh pq esta passando o tamanho da tela com o conteúdo */
+    min-width: 100vh;
     box-sizing: border-box;
     background-color: var(--cor-primaria); /*Usando variaveis no css VAR(NOME DA VARIAVEL)*/
     color: var(--cor-secundaria);
@@ -47,6 +47,7 @@ body {
 .cabecalho__menu {
     display: flex;
     gap: 80px;
+    margin-bottom: 40px;
 
 }
 
@@ -63,6 +64,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 82px;
 }
 
 .apresentacao__conteudo {
@@ -75,11 +77,11 @@ body {
 
 
 .apresentacao__conteudo__titulo {
-    /*
-        1rem é igual à 16px... 2rem é igual à 32px e etc...
+        /*
+            1rem é igual à 16px... 2rem é igual à 32px e etc...
 
-        fazendo à conversão, ex: 36px dividido por 16 = 2.25rem
-    */
+            fazendo à conversão, ex: 36px dividido por 16 = 2.25rem
+        */
     font-size:  2.25rem; 
 
     font-family: 'Oswald', sans-serif;
@@ -117,7 +119,6 @@ body {
     text-align: center;
     border-radius: 8px;
     font-size: 1.5rem;
-    font-family: var(--fonte-primaria);
     font-weight: 600px; /*Por ser botão, usa FONT-WEIGHT para aumentar o destaque das palavras*/
     padding: 21.5px 0;
     text-decoration: none;
@@ -125,13 +126,13 @@ body {
     font-family: var(--fonte-primaria);
 }
 
-/*HOVER: quando passar o mouse acontece alguma coisa. EXEMPLOS ABAIXO...*/
+    /*HOVER: quando passar o mouse acontece alguma coisa. EXEMPLOS ABAIXO...*/
 .apresentacao__links__link:hover { 
     background-color: #272727;
     color: var(--cor-hover);
 }
 
-.apresentacao__links_subtitulo:hover {
+.cabecalho__menu__link:hover {
     color: var(--cor-hover);
 }
 
@@ -140,12 +141,34 @@ body {
 }
 
 .rodape {
-    padding: 24px;
-    text-shadow: 2px 2px #F1EEE9;
-    background-color: var(--cor-terciaria);
     color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    padding: 20px; /*24px*/
     text-align: center;
     font-family: var(--fonte-primaria);
     font-size: 1.5rem;
     font-weight: 400;
+    text-shadow: 2px 2px #F1EEE9;
+}
+
+    /* MEDIA QUERIES CSS */
+@media (max-width: 1500px){
+    .cabecalho {
+        padding: 10%;
+        align-items: center;
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
+    .apresentacao{
+        /* Altera a ordem dos elementos */
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo {
+        width: auto;
+    }
 }
